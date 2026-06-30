@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📥 DOWNLOADS</title>
+    <!-- 🌟 ಪ್ರೀಮಿಯಂ ಐಕಾನ್‌ಗಳಿಗಾಗಿ FontAwesome ಲಿಂಕ್ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* 📥 ಹೆಡರ್ ಸೆಕ್ಷನ್ */
+        .header-container {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .header-container h2 {
+            font-size: 24px;
+            margin: 0;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 📊 ಸ್ಟೋರೇಜ್ ಇಂಡಿಕೇಟರ್ ಡಿಸೈನ್ */
+        .storage-box {
+            background-color: #222;
+            width: 85%;
+            max-width: 450px;
+            height: 30px;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            position: relative;
+            top: -20px;
+        }
+
+        .storage-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #aaa;
+            margin-bottom: 6px;
+            position: relative;
+            top: -10px;
+        }
+
+        .storage-bar-container {
+            background-color: #444;
+            height: 8px;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            top: -8px;
+        }
+
+        .storage-bar-used {
+            background: linear-gradient(90deg, red, #ff4d4d);
+            height: 100%;
+            width: 25%; /* ಇಲ್ಲಿ ಶೇಕಡಾವಾರು ಸ್ಟೋರೇಜ್ ಬದಲಾಯಿಸಬಹುದು */
+            border-radius: 4px;
+
+        }
+
+        /* 🎬 ಡೌನ್‌ಲೋಡ್ ಮೂವಿ ಲಿಸ್ಟ್ (ಲಿಸ್ಟ್ ವ್ಯೂ ಪ್ರೀಮಿಯಂ ಆಗಿ ಕಾಣುತ್ತದೆ) */
+        .download-list {
+            padding: 15px;
+            max-width: 500px;
+            height: 60vh;
+            overflow-y: auto;
+            margin: 0 auto;
+            padding-bottom: 90px; /* ಮೆನುವಿಗಾಗಿ ಜಾಗ */
+        }
+
+        .download-item {
+            display: flex;
+            background-color: #1e1e1e;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            align-items: center;
+            height: 80px;
+        }
+
+        .download-item img {
+            width: 110px;
+            height: 75px;
+            object-fit: cover;
+        }
+
+        .movie-details {
+            padding: 10px 15px;
+            flex: 1;
+        }
+
+        .movie-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .movie-size {
+            font-size: 8px;
+            color: #aaa;
+        }
+
+        /* ▶️ ಪ್ಲೇ ಬಟನ್ */
+        .play-icon-btn {
+            margin-right: 20px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .play-icon-btn:hover {
+            color: red;
+            transform: scale(1.1);
+        }
+
+        /* 📱 ಬಾಟಮ್ ಮೆನು ಸ್ಟೈಲ್ಸ್ */
+       .menu{
+    width:92%;
+    height:70px;
+
+    position:fixed;
+    bottom:10px;
+    left:46%;
+    transform:translateX(-50%);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(248, 3, 3, 0.988);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.45);
+
+    z-index:9999;
+}
+
+        .menu div {
+            flex: 1;
+            text-align: center;
+            color: #faf8f8;
+            font-size: 8.5px; 
+            
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu div a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+
+        .menu div:hover i, .menu div a:hover {
+            color: red;
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+         .sports-btn{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    line-height:1.2;
+    padding-top:0px;
+}
+        .sports-btn i{
+    margin-top:0px;
+}
+
+        /* 7. SPORTS POPUP */
+        .popup {
+            width: 80%;
+            max-width: 320px;
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10001;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: rgb(0, 208, 255);
+        }
+
+        .popup p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .popup button {
+            margin-top: 15px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 20px;
+            background: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* 📱 MOBILE RESPONSIVE CSS */
+        @media (max-width: 768px) {
+            .menu {
+                width: 90%;
+                margin-left: 5%;
+            }
+        }
+        /* 🔥 DOWNLOAD PROGRESS DESIGN */
+.download-progress-area{
+    margin-top: 5px;
+}
+
+.progress-line{
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 1px;
+}
+
+.progress-fill{
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, red, orange);
+    border-radius: 20px;
+    transition: width 0.3s linear;
+}
+
+.download-stats{
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    color: #aaa;
+    margin-top: 3px;
+}
+
+.download-completed{
+    color: #00ff99;
+    font-size: 8px;
+    margin-top: 3px;
+    font-weight: bold;
+}
+.download-item{
+
+    display:flex;
+    background-color:#1e1e1e;
+    margin-bottom:15px;
+    border-radius:8px;
+
+    /* OLD REMOVE */
+    /* overflow:hidden; */
+
+    overflow:visible;
+
+    border:1px solid #2a2a2a;
+    position:relative;
+    align-items:center;
+    height:80px;
+
+}
+.download-item img{
+
+    width:110px;
+    height:75px;
+
+    object-fit:cover;
+
+    border-radius:6px;
+
+    display:block;
+
+    background:#222;
+
+}
+/* 🔥 DELETE POPUP */
+
+.delete-popup{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.75);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+}
+
+/* BOX */
+
+.delete-box{
+
+    width:220px;
+
+    background:#1b1b1b;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    position:relative;
+
+    border:1px solid #333;
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.8);
+
+    animation:popupShow 0.25s ease;
+
+}
+
+/* TITLE */
+
+.delete-box h2{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+/* TEXT */
+
+.delete-box p{
+
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    margin-bottom:25px;
+
+}
+
+/* BUTTONS */
+
+.delete-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+/* CANCEL */
+
+.cancel-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#333;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+/* DELETE */
+
+.delete-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:red;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+/* X CLOSE */
+
+.delete-close{
+
+    position:absolute;
+
+    top:14px;
+    right:14px;
+
+    width:32px;
+    height:32px;
+
+    border-radius:50%;
+
+    background:#2a2a2a;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+/* POPUP ANIMATION */
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+        transform:scale(0.8);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- 📥 ಹೆಡರ್ ಟೈಟಲ್ -->
+    <div class="header-container">
+        <h2><i class="fa-solid fa-circle-arrow-down" style="color: red;"></i> Smart Downloads</h2>
+    </div>
+
+    <!-- 📊 ಲೈವ್ ಸ್ಟೋರೇಜ್ ಇಂಡಿಕೇಟರ್ ಸೆಕ್ಷನ್ -->
+    <div class="storage-box">
+        <div class="storage-info">
+            <span><i class="fa-solid fa-hard-drive"></i> Storage Used: <b>28.4 GB</b></span>
+            <span>Free: <b>35.6 GB</b></span>
+        </div>
+        <div class="storage-bar-container">
+            <div class="storage-bar-used"></div>
+        </div>
+        <div style="font-size: 11px; color: #666; margin-top: 0px; text-align: left;">
+            Stream Box Movies • 1.4 GB Used
+        </div>
+    </div>
+
+    <!-- 🎬 ಡೌನ್‌ಲೋಡ್ ಆಗಿರುವ ಮೂವಿಗಳ ಪಟ್ಟಿ -->
+    <div class="download-list" id="downloadList"></div>
+
+    <!-- 🔥 DELETE POPUP -->
+
+<div class="delete-popup"
+id="deletePopup">
+
+    <div class="delete-box">
+
+        <!-- CLOSE -->
+
+        <div class="delete-close"
+        onclick="closeDeletePopup()">
+
+            <i class="fa fa-times"></i>
+
+        </div>
+
+        <!-- TITLE -->
+
+        <h2 id="deleteMovieTitle">
+
+            Landlord
+
+        </h2>
+
+        <!-- MESSAGE -->
+
+        <p>
+
+            This downloaded movie
+            will be removed from
+            your device and download
+            history.
+
+        </p>
+
+        <!-- BUTTONS -->
+
+        <div class="delete-buttons">
+
+            <button class="cancel-btn"
+            onclick="closeDeletePopup()">
+
+                Cancel
+
+            </button>
+
+            <button class="delete-btn"
+            id="confirmDeleteBtn">
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- 📱 ಬಾಟಮ್ ಮೆನು ಸೆಕ್ಷನ್ (ಇಲ್ಲಿ DOWNLOAD ಆಪ್ಷನ್ ಕೆಂಪು ಬಣ್ಣದಲ್ಲಿ ಹೈಲೈಟ್ ಆಗಿದೆ 🔴) -->
+    <div class="menu">
+        <div>
+            <a href="index(1).html" >
+                <i class="fa-solid fa-house" style="font-size: 16px; margin-bottom: 3px;"></i><br>HOME
+            </a>
+        </div>
+        <div>
+            <a href="SEARCH_PAGE.html" id="home-nav-btn">
+                <i class="fa-solid fa-magnifying-glass" style="font-size: 16px; margin-bottom: 3px;"></i><br>SEARCH
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <i class="fa-solid fa-clapperboard" style="font-size: 16px; margin-bottom: 3px;"></i><br>MOVIES
+            </a>
+        </div> 
+        <div class="sports-btn" onclick="showPopup()">
+            <i class="fa-solid fa-trophy" style="font-size:16px; margin-top:0px;"></i><br>
+            <span style="margin-top:-6px;">
+        SPORTS
+    </span>
+        </div>
+        <div>
+            <a href="DOWNLOAD_PAGE.html" id="download-nav-btn" style="color: red;">
+                <i class="fa-solid fa-circle-arrow-down" style="font-size: 16px; margin-bottom: 3px;"></i><br>DOWNLOAD
+            </a>
+        </div>
+    </div>
+
+    <!-- ಸ್ಪೋರ್ಟ್ಸ್ ಪಾಪ್-ಅಪ್ -->
+    <div class="popup" id="popupBox">
+        <h2><i class="fa-solid fa-trophy" style="color: red;"></i> Sports Update</h2>
+        <p>This will be available in one month, and I will update you after it is released.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+/* 📥 LOAD DOWNLOADS */
+
+let downloadContainer =
+document.getElementById(
+"downloadList"
+);
+
+let savedMovies =
+JSON.parse(
+localStorage.getItem(
+"my_downloads"
+)) || []
+
+
+if(savedMovies.length === 0){
+
+    downloadContainer.innerHTML = `
+
+    <div style="
+    text-align:center;
+    color:#777;
+    margin-top:60px;">
+
+        <i class="fa-solid fa-download"
+        style="font-size:60px;"></i>
+
+        <h3>No Downloads Yet</h3>
+
+    </div>
+
+    `;
+
+}else{
+
+renderDownloads();
+
+}
+
+/* 🔥 RENDER DOWNLOADS */
+
+function renderDownloads(){
+
+downloadContainer.innerHTML = "";
+
+savedMovies.forEach((movie,index)=>{
+
+downloadContainer.innerHTML += `
+
+<div class="download-item">
+
+<img src="${movie.image}">
+
+<div class="movie-details">
+
+<div class="movie-title">
+${movie.title}
+</div>
+
+<div class="movie-size"
+id="movieInfo${index}">
+
+${movie.size}
+
+</div>
+
+<!-- PROGRESS -->
+
+<div class="download-progress-area"
+id="progressArea${index}">
+
+<div class="progress-line">
+
+<div class="progress-fill"
+id="progress${index}">
+</div>
+
+</div>
+
+<div class="download-stats">
+
+<span id="percent${index}">
+0%
+</span>
+
+<span id="speed${index}">
+0 MB/s
+</span>
+
+</div>
+
+</div>
+
+<!-- COMPLETED -->
+
+<div class="download-completed"
+id="complete${index}">
+</div>
+
+</div>
+
+<!-- PLAY / PAUSE -->
+
+<div class="play-icon-btn"
+onclick="togglePause(${index})">
+
+<i class="fa-solid fa-circle-down"
+id="mainIcon${index}"></i>
+
+</div>
+
+<!-- 3 DOT -->
+
+<div style="
+margin-right:15px;
+cursor:pointer;"
+onclick="toggleMenu(${index})">
+
+<i class="fa-solid fa-ellipsis-vertical"></i>
+
+</div>
+
+<!-- MENU -->
+
+<div id="menu${index}"
+
+style="
+
+display:none;
+
+position:absolute;
+
+right:10px;
+
+top:55px;
+
+background:#222;
+
+padding:8px;
+
+border-radius:12px;
+
+z-index:99999;
+
+min-width:140px;
+
+box-shadow:
+0 0 20px rgba(0,0,0,0.7);
+
+border:1px solid #333;
+
+">
+
+<div onclick="playMovie(${index})"
+
+style="
+padding:10px;
+font-size:13px;
+cursor:pointer;">
+
+▶ Play Movie
+
+</div>
+
+<div onclick="deleteMovie(${index})"
+
+style="
+padding:10px;
+font-size:13px;
+cursor:pointer;
+color:red;">
+
+🗑 Delete
+
+</div>
+
+</div>
+
+`;
+
+if(movie.status !== "completed"){
+
+startDownload(index);
+
+}else{
+
+showCompleted(index);
+
+}
+
+});
+
+}
+
+/* 🔥 START DOWNLOAD */
+
+function startDownload(index){
+
+let interval =
+setInterval(()=>{
+
+savedMovies =
+JSON.parse(
+localStorage.getItem(
+"my_downloads"
+));
+
+let movie =
+savedMovies[index];
+
+if(movie.status === "paused"){
+
+return;
+
+}
+
+movie.progress +=
+Math.random() * 8;
+
+if(movie.progress >= 100){
+
+movie.progress = 100;
+
+movie.status =
+"completed";
+
+clearInterval(interval);
+
+showCompleted(index);
+
+}
+
+document.getElementById(
+`progress${index}`
+).style.width =
+movie.progress + "%";
+
+document.getElementById(
+`percent${index}`
+).innerHTML =
+Math.floor(movie.progress)
++ "%";
+
+let speed =
+(Math.random()*5+1)
+.toFixed(1);
+
+document.getElementById(
+`speed${index}`
+).innerHTML =
+speed + " MB/s";
+
+localStorage.setItem(
+"my_downloads",
+JSON.stringify(savedMovies)
+);
+
+},500);
+
+}
+
+/* 🔥 SHOW COMPLETED */
+
+function showCompleted(index){
+
+document.getElementById(
+`complete${index}`
+).innerHTML =
+"✔ Download Completed";
+
+document.getElementById(
+`progressArea${index}`
+).style.display =
+"none";
+
+document.getElementById(
+`movieInfo${index}`
+).innerHTML =
+
+savedMovies[index].duration
++ " • Kannada";
+
+document.getElementById(
+`mainIcon${index}`
+).className =
+"fa-solid fa-circle-play";
+
+}
+
+/* 🔥 PAUSE / PLAY */
+
+function togglePause(index){
+
+savedMovies =
+JSON.parse(
+localStorage.getItem(
+"my_downloads"
+));
+
+let movie =
+savedMovies[index];
+
+if(movie.status === "completed"){
+
+playMovie(index);
+return;
+
+}
+
+if(movie.status === "paused"){
+
+movie.status =
+"downloading";
+
+document.getElementById(
+`mainIcon${index}`
+).className =
+"fa-solid fa-circle-down";
+
+}else{
+
+movie.status =
+"paused";
+
+document.getElementById(
+`mainIcon${index}`
+).className =
+"fa-solid fa-circle-pause";
+
+}
+
+localStorage.setItem(
+"my_downloads",
+JSON.stringify(savedMovies)
+);
+
+}
+
+/* 🔥 PLAY MOVIE */
+
+function playMovie(index){
+
+window.location.href =
+savedMovies[index].link;
+
+}
+
+/* 🔥 DELETE */
+
+/* 🔥 DELETE POPUP SYSTEM */
+
+let deleteIndex = null;
+
+/* OPEN POPUP */
+
+function deleteMovie(index){
+
+    deleteIndex = index;
+
+    document.getElementById(
+    "deletePopup"
+    ).style.display = "flex";
+
+    document.getElementById(
+    "deleteMovieTitle"
+    ).innerHTML =
+
+    savedMovies[index].title;
+
+}
+
+/* CLOSE POPUP */
+
+function closeDeletePopup(){
+
+    document.getElementById(
+    "deletePopup"
+    ).style.display = "none";
+
+}
+
+/* CONFIRM DELETE */
+
+document.getElementById(
+"confirmDeleteBtn"
+).onclick = ()=>{
+
+    if(deleteIndex !== null){
+
+        savedMovies.splice(
+        deleteIndex,
+        1
+        );
+
+        localStorage.setItem(
+        "my_downloads",
+        JSON.stringify(savedMovies)
+        );
+
+        location.reload();
+
+    }
+
+}
+
+/* 🔥 3 DOT MENU */
+
+function toggleMenu(index){
+
+let menu =
+document.getElementById(
+`menu${index}`
+);
+
+if(menu.style.display
+=== "block"){
+
+menu.style.display =
+"none";
+
+}else{
+
+menu.style.display =
+"block";
+
+}
+
+}
+/* 🔥 CLOSE 3DOT WHEN CLICK OUTSIDE */
+
+document.addEventListener(
+"click",
+(e)=>{
+
+if(!e.target.closest(
+".fa-ellipsis-vertical"
+)
+&&
+!e.target.closest(
+'[id^="menu"]'
+)){
+
+document.querySelectorAll(
+'[id^="menu"]'
+).forEach(menu=>{
+
+menu.style.display =
+"none";
+
+});
+
+}
+
+});
+
+</script>
+</body>
+</html>

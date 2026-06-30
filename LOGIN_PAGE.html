@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>STREAM BOX LOGIN</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+}
+
+body{
+background:#0f0f0f;
+display:flex;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
+}
+
+.box{
+width:100%;
+max-width:360px;
+background:#1a1a1a;
+padding:30px 20px;
+border-radius:25px;
+border:1px solid #333;
+box-shadow:0 0 30px rgba(255,0,0,0.2);
+text-align:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+margin-bottom:8px;
+color:white;
+}
+
+.logo span{
+color:red;
+}
+
+.sub{
+color:#999;
+font-size:14px;
+margin-bottom:25px;
+}
+
+.input-box{
+position:relative;
+margin-top:15px;
+}
+
+.input-box i{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+color:#888;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:14px 14px 14px 45px;
+border:none;
+outline:none;
+border-radius:14px;
+background:#2b2b2b;
+color:white;
+font-size:15px;
+}
+
+input:focus{
+border:1px solid red;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:22px;
+border:none;
+border-radius:14px;
+background:red;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+opacity:0.9;
+transform:scale(1.02);
+}
+
+#message{
+margin-top:15px;
+font-size:14px;
+font-weight:bold;
+min-height:20px;
+}
+
+.signup{
+margin-top:22px;
+color:#999;
+font-size:14px;
+}
+
+.signup a{
+color:red;
+text-decoration:none;
+font-weight:bold;
+}
+
+.signup a:hover{
+text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="logo">
+STREAM <span>BOX</span>
+</div>
+
+<div class="sub">
+Login To Continue
+</div>
+
+<!-- USERNAME -->
+
+<div class="input-box">
+
+<i class="fa fa-user"></i>
+
+<input type="text"
+id="username"
+placeholder="Enter Username">
+
+</div>
+
+<!-- PASSWORD -->
+
+<div class="input-box">
+
+<i class="fa fa-lock"></i>
+
+<input type="password"
+id="password"
+placeholder="Enter Password">
+
+</div>
+
+<!-- LOGIN BUTTON -->
+
+<button onclick="loginUser()">
+
+LOGIN
+
+</button>
+
+<!-- MESSAGE -->
+
+<div id="message"></div>
+
+<!-- SIGNUP -->
+
+<div class="signup">
+
+Don't have account ?
+
+<a href="SIGNUP_PAGE.html">
+
+Sign Up
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function loginUser(){
+
+    let username =
+    document.getElementById("username")
+    .value.trim();
+
+    let password =
+    document.getElementById("password")
+    .value.trim();
+
+    let message =
+    document.getElementById("message");
+
+    /* STORED DATA */
+
+    let storedUsername =
+    localStorage.getItem(
+    "streambox_username"
+    );
+
+    let storedPassword =
+    localStorage.getItem(
+    "streambox_password"
+    );
+
+    /* EMPTY CHECK */
+
+    if(username === "" ||
+       password === ""){
+
+        message.innerHTML =
+        "⚠️ Fill all fields";
+
+        message.style.color =
+        "orange";
+
+        return;
+    }
+
+    /* ACCOUNT NOT FOUND */
+
+    if(storedUsername === null){
+
+        message.innerHTML =
+        "❌ First Create Account";
+
+        message.style.color =
+        "red";
+
+        return;
+    }
+
+    /* LOGIN SUCCESS */
+
+    if(username === storedUsername &&
+       password === storedPassword){
+
+        message.innerHTML =
+        "✅ Login Successful";
+
+        message.style.color =
+        "#00ff66";
+
+        /* SAVE LOGIN USER */
+
+        localStorage.setItem(
+        "loggedUser",
+        username
+        );
+
+        setTimeout(()=>{
+
+            window.location.href =
+            "PROFILE_PAGE.html";
+
+        },1000);
+
+    }
+
+    /* WRONG PASSWORD */
+
+    else if(username === storedUsername &&
+            password !== storedPassword){
+
+        message.innerHTML =
+        "❌ Incorrect Password";
+
+        message.style.color =
+        "red";
+
+    }
+
+    /* WRONG USERNAME */
+
+    else{
+
+        message.innerHTML =
+        "❌ Account Not Found";
+
+        message.style.color =
+        "red";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

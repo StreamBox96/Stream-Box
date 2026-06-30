@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠HOME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        /* FULL SCREEN SPLASH */
+
+.splash{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    overflow:hidden;
+}
+
+/* LOGO */
+
+.logo{
+    width:340px;
+    max-width:85%;
+
+    opacity:0;
+    transform:scale(0.5);
+
+    animation:
+    logoShow 2.2s ease forwards,
+    floatLogo 3s ease-in-out infinite 2.2s;
+}
+
+/* LOADER */
+
+#loader-wrapper{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:9999;
+}
+
+/* ANIMATION */
+
+@keyframes logoShow{
+
+    0%{
+        opacity:0;
+        transform:scale(0.4) rotate(-10deg);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.05);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+        .loader-circle {
+            border: 4px solid #333;
+            border-top: 4px solid red; 
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+            align-items: center;
+                justify-content: center;
+                display: flex;
+        }
+
+        .loader-text {
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        @keyframes logoPop {
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes textSlideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 2. ಬಾಡಿ ಸೆಟಪ್ */
+        body {
+            margin: 0;
+            margin-top: 50px;
+            padding-bottom:100px;
+            background-color: #141414;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .content {
+            padding: 15px;
+            padding-bottom: 100px; 
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .title h5 {
+            margin: 0;
+            color: #aaa;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .title h1 {
+            margin: 5px 0 0 0;
+            color: red;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 🍿 ಸ್ಲೈಡರ್ ಮೇನ್ ಕಂಟೈನರ್ */
+        .slider-section {
+            padding: 10px 0;
+            background-color: #141414;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-left: 10%;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        
+        }
+        .section-title span {
+            color: #E50914;
+    text-shadow: 0 0 15px rgba(229,9,20,.8);; 
+        }
+        /* ===================================
+   STREAM BOX PREMIUM TRENDING
+=================================== */
+.mySwiper{
+    width:100%;
+    overflow:visible;
+    height:280px;
+}
+
+.swiper-slide{
+    position:relative;
+    width:180px;
+    height:250px;
+    overflow:visible;
+    
+}
+
+.swiper-slide a{
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    border: 1.5px solid #ffffff;
+    padding:6px;
+}
+
+/* Poster */
+
+.movie-poster{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:20px;
+}
+
+/* Top Badge */
+
+.top-badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    z-index:100;
+}
+
+.top-badge img{
+    width:50px;
+}
+
+/* Movie Info */
+
+.movie-info{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+    padding:10px 5px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.55),
+        transparent
+    );
+}
+
+/* Movie Logo */
+
+.movie-logo{
+    width:105%;
+    max-height:200px;
+    object-fit:contain;
+    transform: translateY(85px);
+}
+
+/* Genre */
+
+.movie-genre{
+    color:#ddd;
+    font-size:10px;
+    margin-top:3px;
+}
+
+/* Rating */
+
+.movie-rating{
+    color:#FFD700;
+    font-size:13px;
+    font-weight:700;
+    margin-top:3px;
+}
+
+.swiper-slide-active{
+
+    transform:scale(1.08);
+    
+    transition:.4s;
+
+    border-radius:20px;
+}
+.mySwiper .swiper-slide-prev a,
+.mySwiper .swiper-slide-next a{
+    border:1px solid rgb(255, 255, 255);
+    border-radius:20px;
+}
+        
+        .watch-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            padding: 8px 16px;
+            background: #5cb9f7;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            border-radius: 20px;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        } 
+
+        .movie-title {
+            position: absolute;
+            bottom: 15px;   
+            left: 15px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        } 
+
+        /* 4. ಮೂವಿ ಲಿಸ್ಟ್ ಸೆಕ್ಷನ್ */
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            color: #eee;
+            letter-spacing: 0.5px;
+        }
+
+        .movies {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 0px;
+            scroll-behavior: smooth;
+        }
+
+        .movies::-webkit-scrollbar {
+            display: none;
+        }
+
+        .movie {
+            min-width: 120px; 
+            height: 150px;
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden; 
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+            border: 2px solid #ccc;
+        }
+
+        .movie img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        
+        .movie-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 25px 6px 8px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.40),
+        rgba(0,0,0,0)
+    );
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    top: 105px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+        .movie:hover{
+            transform: scale(1.05);
+        }
+        .continue-section{
+    margin-top:15px;
+    padding:0 5px;
+}
+.section-title{
+    font-size:16px;
+    margin-bottom:10px;
+    margin-left:1px;
+    color:#eee;
+    display:flex;
+    gap:6px;
+}
+.section-title-icon{
+    margin-left: 1px;
+    display:flex;
+    align-items:center;
+}
+.continue-list{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    padding-bottom:10px;
+}
+
+.continue-list::-webkit-scrollbar{
+    display:none;
+}
+
+.continue-card{
+    min-width:130px;
+    background:#181818;
+    border-radius:4px;
+    overflow:hidden;
+    position:relative;
+
+    transition:all 0.25s ease;
+}
+
+.continue-card:active{
+    transform:scale(0.95);
+
+    box-shadow:
+    0 0 15px rgba(255,0,0,0.7);
+
+    border:1px solid red;
+}
+.continue-card img{
+    width:100%;
+    height:90px;
+    object-fit:cover;
+}
+
+.continue-card:active img{
+    transform:scale(1.08);
+}
+.continue-card:active{
+    transform:scale(0.96);
+    background:#242424;
+
+    box-shadow:
+    0 0 12px rgba(255,0,0,0.8),
+    0 0 25px rgba(255,0,0,0.4);
+}
+
+.continue-title{
+    font-size:11px;
+    color: #fff;
+    padding:2px 5px;
+    line-height:1;
+    text-align: center;
+    position:relative;
+    top:-2px;
+}
+
+.progress-wrap{
+    height:4px;
+    background:#333;
+}
+
+.progress-fill{
+    height:100%;
+    background:red;
+}
+.continue-menu{
+    position:absolute;
+    top:8px;
+    right:8px;
+    z-index:100;
+}
+
+.menu-btn{
+    background:rgba(0,0,0,.7);
+    color:white;
+    border:none;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.menu-dropdown{
+    display:none;
+
+    position:absolute;
+    right:0;
+    top:35px;
+
+    background:#181818;
+
+    border-radius:10px;
+
+    min-width:180px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+}
+
+.menu-dropdown div{
+    padding:12px;
+    color:white;
+    cursor:pointer;
+}
+
+.menu-dropdown div:hover{
+    background:#E50914;
+}
+
+        .storage-container {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #222;
+        }
+
+        /* 📱 ಬಾಟಮ್ ಮೆನು ಸ್ಟೈಲ್ಸ್ */
+        .menu{
+    width:92%;
+    height:56px;
+
+    position:fixed;
+    bottom:10px;
+    left:45%;
+    transform:translateX(-50%);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    border-radius:25px;
+
+    background:rgb(61, 61, 61);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(248, 3, 3, 0.988);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.45);
+
+    z-index:99999;
+}
+
+        .menu div {
+            flex: 1;
+            text-align: center;
+            color: #faf8f8;
+            font-size: 8px; 
+            
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu div a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+
+        .menu div:hover i, .menu div a:hover {
+            color: red;
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+       
+        .popup {
+            width: 80%;
+            max-width: 320px;
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10001;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #5cb9f7;
+        }
+
+        .popup p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .popup button {
+            margin-top: 15px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 20px;
+            background: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0px;
+            }
+            .menu {
+                width: 90%;
+                margin-left: 5%;
+            }
+            .suggestion-grid, .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+                gap: 10px !important; 
+            }
+            .suggested-card img, .movie-card img {
+                height: 150px !important; 
+            }
+            .suggested-title, .movie-title {
+                font-size: 11px !important;
+                padding: 4px !important;
+            }
+            .main-banner h1 {
+                font-size: 24px !important; 
+            }
+        }
+        .sports-btn{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    line-height:1.2;
+    padding-top:0px;
+}
+        .sports-btn i{
+    margin-top:0px;
+}
+.hero-banner{
+    position:relative;
+    width:100%;
+    height:280px;
+    overflow:hidden;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+.hero-bg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(20,20,20,1),
+        rgba(20,20,20,0.2)
+    );
+
+    display:flex;
+    align-items:flex-end;
+}
+
+.hero-content{
+    padding:20px;
+}
+
+.hero-badge{
+    display:inline-block;
+
+    background:red;
+    color:white;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+.hero-content h1{
+    margin:0;
+    font-size:34px;
+}
+
+.hero-content p{
+    margin:8px 0 15px;
+    color:#ddd;
+    font-size:13px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.watch-now,
+.my-list{
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-decoration:none;
+}
+
+.watch-now{
+    background:white;
+    color:black;
+}
+
+.my-list{
+    background:rgba(255,255,255,0.15);
+    color:white;
+
+    backdrop-filter:blur(15px);
+}
+        /* TOP 10 SECTION */
+
+.top10-card{
+    position: relative;
+    overflow: visible;
+}
+
+.rank-number{
+    position: absolute;
+    left: -12px;
+    bottom: -12px;
+
+    font-size: 75px;
+    font-weight: 900;
+    line-height: 1;
+
+    color: rgb(0, 0, 0);
+
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+
+    text-shadow:
+        0 0 15px rgba(255,0,0,0.4);
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.top10-card:active .rank-number{
+    transform: scale(1.08);
+
+    transition: .25s ease;
+}
+
+.top10-card:hover{
+    transform: translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(37, 36, 36, 0.4);
+}
+#recommendedSection .section-title{
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.watched-movie{
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(229,9,20,0.4);
+}
+
+/* ⚡ ನಾವು ಹೊಸದಾಗಿ ಸೇರಿಸಿರುವ ಕ್ಲೌಡ್ ಅಪ್‌ಲೋಡ್ ಬಾಕ್ಸ್ ಸ್ಟೈಲ್ */
+        .cloud-upload-section {
+            background: linear-gradient(145deg, #1e1e1e, #111);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: center;
+            border: 2px dashed #e50914;
+            box-shadow: 0 8px 20px rgba(229, 9, 20, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+        .cloud-upload-section h3 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .cloud-upload-section input[type="file"] {
+            color: #fff;
+            margin-bottom: 15px;
+            background: #222;
+            padding: 10px;
+            border-radius: 6px;
+            width: 100%;
+            border: 1px solid #333;
+            margin-top: 15px;
+        }
+        .cloud-upload-section button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .cloud-upload-section button:hover {
+            background-color: #b80710;
+            transform: scale(1.05);
+        }
+        #uploadStatus {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="splash" id="splashScreen">
+    <img src="LOGO_STREAM.png" class="logo">
+</div>
+
+<div id="loader-wrapper">
+    <div class="loader-circle"></div>
+    <div class="loader-text">
+        Loading<br>
+        Stream Box...
+    </div>
+</div>
+    
+    <div style="
+position: fixed;
+top: 15px;
+right: 20px;
+z-index: 9999;
+">
+    <a href="SEARCH_PAGE.html" style="text-decoration: none;">
+        <div style="
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: #252525;
+        border-radius: 50%;
+        border: 2px solid red;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        cursor: pointer;
+        ">
+            <i class="fa-solid fa-search"
+            style="color:#aaa;font-size:20px;"></i>
+
+        </div>
+    </a>
+</div>
+
+    <div class="content" id="home-page-content">
+        <div class="title">
+            <h5>WELCOME TO</h5>
+            <h1>STREAM BOX</h1>
+        </div>
+<div class="hero-banner">
+    <img src="Dacoit(2).jpg" class="hero-bg">
+
+    <div class="hero-overlay">
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                STREAM BOX ORIGINAL
+            </div>
+
+            <h1>DACOIT</h1>
+
+            <p>
+                ⭐ 8.9 • Action • Thriller • 2026
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="DACOIT.html" class="watch-now">
+                    <i class="fa-solid fa-play"></i>
+                    Watch Now
+                </a>
+
+                <button class="my-list">
+                    <i class="fa-solid fa-plus"></i>
+                    My List
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+        <div class="slider-section">
+            <div class="section-title">TRENDING <span>BOX</span></div>
+        
+            <!-- 🔥 SWIPER HTML -->
+
+<div class="swiper mySwiper">
+
+<div class="swiper-wrapper">
+
+<!-- ORIGINAL -->
+
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+
+</div>
+
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+<div class="swiper-slide">
+
+    <div class="top-badge">
+        <img src="Top-1.png" alt="Top 1">
+    </div>
+
+    <a href="LANDLORD.html">
+
+        <img src="Landlord(2).jpg" class="movie-poster">
+
+        <div class="movie-info">
+
+            <img src="Landlord_logo.png"
+                 class="movie-logo">
+
+            <div class="movie-genre">
+                Action • Drama
+            </div>
+
+            <div class="movie-rating">
+                ⭐ 9.1
+            </div>
+
+        </div>
+
+    </a>
+</div>
+
+</div>
+</div>
+</div>
+
+        <div class="section">
+            <div class="section-title">
+       <div class="section-title-icon">
+            <i class="fa-solid fa-chart-line"></i>
+         </div>
+        Trending Movies
+        </div>
+    </div>
+            <div class="movies">
+                <div class="movie">
+                    <a href="VAAZHA-2.html"><img src="Vaazha-2.jpg" alt="Vaazha"></a>
+                    <div class="movie-name">Vaazha-II</div>
+                </div>
+                <div class="movie">
+                    <a href="THE_RAJASAAB(1).html"><img src="The_RajaSaab.jpg" alt="The RajaSaab"></a>
+                    <div class="movie-name">The RajaSaab</div>
+                </div>               
+                <div class="movie">
+                    <a href="MARK.html"><img src="Mark.jpg" alt="Mark"></a>
+                    <div class="movie-name">Mark</div>
+                </div>
+                <div class="movie">
+                    <a href="LANDLORD.html"><img src="Landlord.jpg" alt="Landloard"></a>
+                    <div class="movie-name">Landlord</div>
+                </div>
+                <div class="movie">
+                    <a href="KANTARA.html"><img src="Kantara.jpg" alt="Kantara"></a>
+                    <div class="movie-name">Kantara</div>
+                </div>
+            </div>
+        
+<div class="continue-section">
+                   <div class="section">
+             <div class="section-title">
+       <div class="section-title-icon">
+            <i class="fa-solid fa-play"></i>
+         </div>
+        Continue Watching
+        </div>   
+
+    <div id="continueContainer"
+    class="continue-list">
+    <button class="menu-btn"
+            onclick="toggleMenu(this)">
+        ⋮
+    </button>
+
+    <div class="menu-dropdown">
+
+        <div onclick="removeMovie('LANDLORD_DATA')">
+
+            🗑 Remove from Continue Watching
+
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+</div>
+<div class="section">
+    <div class="section-title">
+        <div class="section-title-icon">
+            <i class="fa-solid fa-ranking-star"></i>
+        </div>
+        Top 5 in India
+    </div>
+
+    <div class="movies top10-movies">
+
+        <div class="movie top10-card">
+            <span class="rank-number">1</span>
+            <a href="LANDLORD.html">
+                <img src="Landlord.jpg" alt="Landlord">
+            </a>
+            <div class="movie-name">Landlord</div>
+        </div>
+
+        <div class="movie top10-card">
+            <span class="rank-number">2</span>
+            <a href="MARK.html">
+                <img src="Mark.jpg" alt="Mark">
+            </a>
+            <div class="movie-name">Mark</div>
+        </div>
+
+        <div class="movie top10-card">
+            <span class="rank-number">3</span>
+            <a href="KANTARA.html">
+                <img src="Kantara.jpg" alt="Kantara">
+            </a>
+            <div class="movie-name">Kantara</div>
+        </div>
+
+        <div class="movie top10-card">
+            <span class="rank-number">4</span>
+            <a href="VAAZHA-2.html">
+                <img src="Vaazha-2.jpg" alt="Vaazha">
+            </a>
+            <div class="movie-name">Vaazha-II</div>
+        </div>
+
+        <div class="movie top10-card">
+            <span class="rank-number">5</span>
+            <a href="RAAKSHASA.html">
+                <img src="Raakshasa.jpg" alt="Raakshasa">
+            </a>
+            <div class="movie-name">Raakshasa</div>
+        </div>
+
+    </div>
+</div>
+<div class="section" id="myListSection">
+
+    <div class="section-title">
+        ❤️ My List
+    </div>
+
+    <div class="movies" id="myListMovies">
+
+    </div>
+
+</div>
+<div class="section" id="recommendedSection">
+
+    <div class="section-title">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <span id="recommendationTitle">
+            Because You Watched
+        </span>
+    </div>
+
+    <div class="movies"
+         id="recommendedMovies">
+
+    </div>
+
+</div>
+        <div class="section">
+             <div class="section-title">
+       <div class="section-title-icon">
+          <i class="fa-solid fa-gun"></i>
+         </div>
+        Action Movies
+        </div>
+    </div>
+            <div class="movies">
+                <div class="movie">
+                    <a href="COOLIE.html"><img src="Coolie.jpg" alt="Coolie"></a>
+                    <div class="movie-name">Coolie</div>
+                </div>
+                <div class="movie">
+                    <a href="THE_RAJASAAB(1).html"><img src="The_RajaSaab.jpg" alt="The RajaSaab"></a>
+                    <div class="movie-name">The RajaSaab</div>
+                </div>               
+                <div class="movie">
+                    <a href="MARK.html"><img src="Mark.jpg" alt="Mark"></a>
+                    <div class="movie-name">Mark</div>
+                </div>
+                <div class="movie">
+                    <a href="MOVIE-1.html"><img src="sister.jpg" alt="Devil"></a>
+                    <div class="movie-name">Devil</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="content" id="download-page-content" style="display: none;">
+        <div class="title">
+            <h5>OFFLINE VIDEOS</h5>
+            <h1>DOWNLOADS</h1>
+        </div>
+
+        <div class="storage-container">
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 8px;">
+                <span style="color: #aaa;">Storage Space</span>
+                <span id="storage-text" style="color: #fff;">1.2 GB Used of 10 GB Max</span>
+            </div>
+            <div style="width: 100%; background: #333; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div id="storage-bar-fill" style="width: 12%; background: red; height: 100%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px;">
+            <div class="movie" style="height: auto; min-width: unset;">
+                <img src="Landloard.jpg" alt="Landlord">
+                <div class="movie-name">Landloard</div>
+                <div style="font-size: 11px; text-align: center; color: #5cb9f7; padding: 4px 0; background: #1a1a1a;">1.2 GB | Done</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div>
+            <a href="HOME_PAGE.html" id="home-nav-btn" style="color: red;">
+                <i class="fa-solid fa-house" style="font-size: 16px; margin-bottom: 3px;"></i><br>HOME
+            </a>
+        </div>
+       
+        <div>
+            <a href="">
+                <i class="fa-solid fa-clapperboard" style="font-size: 16px; margin-bottom: 3px;"></i><br>MOVIES
+            </a>
+        </div> 
+        <div class="sports-btn" onclick="showPopup()">
+            <i class="fa-solid fa-trophy" style="font-size:16px; margin-top:0px;"></i><br>
+            <span style="margin-top:-6px;">
+        SPORTS
+    </span>
+        </div>
+        <div>
+            <a href="DOWNLOAD_PAGE.html" id="download-nav-btn">
+                <i class="fa-solid fa-circle-arrow-down" style="font-size: 16px; margin-bottom: 3px;"></i><br>DOWNLOAD
+            </a>
+        </div>
+        <div>
+            <a href="PROFILE_PAGE.html">
+                <i class="fa-solid fa-user" style="font-size: 16px; margin-bottom: 3px;"></i><br>PROFILE
+            </a>
+        </div>
+    </div>
+
+    <div class="popup" id="popupBox">
+        <h2><i class="fa-solid fa-trophy" style="color: red;"></i> Sports Update</h2>
+        <p>This will be available in one month, and I will update you after it is released.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+ 
+    <script>
+       window.addEventListener("load", () => {
+
+    const splash =
+    document.getElementById("splashScreen");
+
+    const loader =
+    document.getElementById("loader-wrapper");
+
+    const firstVisit =
+    sessionStorage.getItem("logoShown");
+
+    // FIRST TIME
+    if(!firstVisit){
+
+        sessionStorage.setItem(
+            "logoShown",
+            "true"
+        );
+
+        // 3 seconds logo
+        setTimeout(() => {
+
+            splash.style.transition =
+            "0.8s ease";
+
+            splash.style.opacity = "0";
+
+            setTimeout(() => {
+
+                splash.style.display =
+                "none";
+
+            }, 800);
+
+        }, 3000);
+
+    }
+
+    // NEXT TIME
+    else{
+
+        splash.style.display = "none";
+
+        loader.style.display = "flex";
+
+        setTimeout(() => {
+
+            loader.style.opacity = "0";
+
+            loader.style.transition =
+            "0.5s";
+
+            setTimeout(() => {
+
+                loader.style.display =
+                "none";
+
+            }, 500);
+
+        }, 1000);
+
+    }
+
+}); 
+  
+var swiper = new Swiper(".mySwiper", {
+
+    effect: "coverflow",
+
+    grabCursor: true,
+
+    centeredSlides: true,
+
+    slidesPerView: "auto",
+
+    loop: true,
+
+    loopedSlides: 6,
+
+    speed: 1200,
+
+    spaceBetween: -10,
+
+    allowTouchMove: true,
+
+    freeMode: false,
+
+    autoplay: {
+
+        delay: 5000,
+
+        disableOnInteraction: false,
+
+        pauseOnMouseEnter: false
+    },
+
+   coverflowEffect: {
+
+    rotate: 0,
+
+    stretch: -25,
+
+    depth: 160,
+
+    modifier: 2.5,
+
+    scale: 0.95,
+
+    slideShadows: false
+},
+
+});
+
+// ⚡ ಸ್ಮಾರ್ಟ್ ಸ್ಪ್ಲಾಶ್ ಲೋಡರ್ ಲಾಜಿಕ್
+document.addEventListener("DOMContentLoaded", function() {
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const loaderContent = document.getElementById("loader-content");
+
+    let isAppFirstOpen = sessionStorage.getItem("appFirstOpen");
+
+    if (!isAppFirstOpen) {
+        loaderContent.innerHTML = `
+            <div class="app-logo-anim"></div>
+            <div class="app-name-anim">STREAM <span>BOX</span></div>
+        `;
+        
+        sessionStorage.setItem("appFirstOpen", "true");
+
+        setTimeout(() => {
+            hideLoader();
+        }, 2000);
+
+    } else {
+        loaderContent.innerHTML = `
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Stream Box...</div>
+        `;
+
+        setTimeout(() => {
+            hideLoader();
+        }, 1000);
+    }
+
+    function hideLoader() {
+
+    loaderWrapper.style.transition =
+        "opacity 0.5s ease";
+
+    loaderWrapper.style.opacity = "0";
+
+    setTimeout(() => {
+
+        loaderWrapper.style.display = "none";
+
+        restorePagePosition();
+
+    }, 500);
+
+}
+
+});
+
+
+
+function showPopup() {
+    document.getElementById("popupBox").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popupBox").style.display = "none";
+}
+
+// 🔥 ಟ್ಯಾಬ್ ಚೇಂಜ್ ಮಾಡಿ ವಾಪಸ್ ಬಂದಾಗ ಅಥವಾ ವಿಂಡೋ ಫೋಕಸ್ ಆದಾಗ ಆಟೋಪ್ಲೇ ರಿಸ್ಟಾರ್ಟ್ ಸೆಟಪ್
+document.addEventListener("visibilitychange", function() {
+    if (!document.hidden && swiper !== null && swiper.autoplay) {
+        swiper.autoplay.start();
+    }
+});
+
+window.addEventListener("focus", function() {
+    if (swiper !== null && swiper.autoplay) {
+        swiper.autoplay.start();
+    }
+});
+swiper.on('slideChange', function () {
+
+    sessionStorage.setItem(
+        "swiperIndex",
+        swiper.realIndex
+    );
+
+});
+window.addEventListener("load", function () {
+
+    const savedIndex =
+        sessionStorage.getItem("swiperIndex");
+
+    if (savedIndex !== null) {
+
+        swiper.slideToLoop(
+            parseInt(savedIndex),
+            0
+        );
+
+    }
+
+});
+// 🔥 HOME PAGE SCROLL POSITION SAVE & RESTORE
+
+// scroll save madutte
+window.addEventListener("beforeunload", function () {
+
+    sessionStorage.setItem(
+        "homeScrollPosition",
+        window.scrollY
+    );
+
+});
+
+// page open adaga scroll restore madutte
+window.addEventListener("load", function () {
+
+    const savedPosition =
+        sessionStorage.getItem("homeScrollPosition");
+
+    if (savedPosition !== null) {
+
+        window.scrollTo({
+            top: parseInt(savedPosition),
+            behavior: "instant"
+        });
+
+    }
+
+});
+// 🔥 MOVIE CLICK MADIDAGA POSITION SAVE
+
+document.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        // scroll save
+        sessionStorage.setItem(
+            "homeScrollPosition",
+            window.scrollY
+        );
+
+        // swiper current slide save
+        if (swiper) {
+
+            sessionStorage.setItem(
+                "swiperIndex",
+                swiper.realIndex
+            );
+
+        }
+
+    });
+
+});
+// 🔥 PAGE OPEN ADAGA RESTORE
+
+window.addEventListener("load", function () {
+
+    // scroll restore
+    const savedPosition =
+        sessionStorage.getItem("homeScrollPosition");
+
+    if (savedPosition !== null) {
+
+        setTimeout(() => {
+
+            window.scrollTo(
+                0,
+                parseInt(savedPosition)
+            );
+
+        }, 200);
+
+    }
+
+    // swiper restore
+    const savedIndex =
+        sessionStorage.getItem("swiperIndex");
+
+    if (
+        savedIndex !== null &&
+        swiper
+    ) {
+
+        swiper.slideToLoop(
+            parseInt(savedIndex),
+            0
+        );
+
+    }
+
+});
+// 🔥 SCROLL & SWIPER POSITION SAVE
+
+function savePagePosition() {
+
+    // scroll position save
+    sessionStorage.setItem(
+        "homeScrollPosition",
+        window.scrollY
+    );
+
+    // swiper position save
+    if (swiper) {
+
+        sessionStorage.setItem(
+            "swiperIndex",
+            swiper.realIndex
+        );
+
+    }
+
+}
+
+
+// 🔥 RESTORE FUNCTION
+
+function restorePagePosition() {
+
+    // scroll restore
+    const savedScroll =
+        sessionStorage.getItem(
+            "homeScrollPosition"
+        );
+
+    if (savedScroll !== null) {
+
+        setTimeout(() => {
+
+            window.scrollTo(
+                0,
+                parseInt(savedScroll)
+            );
+
+        }, 300);
+
+    }
+
+
+    // swiper restore
+    const savedSwiper =
+        sessionStorage.getItem(
+            "swiperIndex"
+        );
+
+    if (
+        savedSwiper !== null &&
+        swiper
+    ) {
+
+        setTimeout(() => {
+
+            swiper.slideToLoop(
+                parseInt(savedSwiper),
+                0
+            );
+
+        }, 200);
+
+    }
+
+}
+
+
+// 🔥 MOVIE CLICK MADIDAGA SAVE
+
+document.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        savePagePosition();
+
+    });
+
+});
+function loadContinueWatching(){
+
+    const container =
+    document.getElementById("continueContainer");
+
+    container.innerHTML = "";
+
+    const keys = [
+        "continue_DACOIT",
+        "continue_LANDLORD",
+        "continue_MARK",
+        "continue_KANTARA",
+        "continue_VAAZHA"
+    ];
+
+    let found = false;
+
+    keys.forEach(key => {
+
+        const data = JSON.parse(
+            localStorage.getItem(key)
+        );
+
+        if(data && data.currentTime > 20){
+
+            found = true;
+
+            const percent =
+            (data.currentTime /
+            data.duration) * 100;
+
+            container.innerHTML += `
+
+            <a href="${data.page}"
+            class="continue-card">
+
+                <img src="${data.poster}">
+
+                <div class="continue-title">
+                    ${data.title}
+                </div>
+
+                <div class="progress-wrap">
+                    <div class="progress-fill"
+                    style="width:${percent}%">
+                    </div>
+                </div>
+
+            </a>
+            `;
+        }
+        if(percent > 95){
+
+    localStorage.removeItem(
+        "LANDLORD_DATA"
+    );
+
+}
+
+    });
+
+    if(!found){
+
+        container.innerHTML =
+        `<div style="color:#777">
+        No Movies Yet
+        </div>`;
+    }
+}
+const recommendations = {
+
+    Dacoit: [
+        {
+            title:"Mark",
+            page:"MARK.html",
+            poster:"Mark.jpg"
+        },
+        {
+            title:"Kantara",
+            page:"KANTARA.html",
+            poster:"Kantara.jpg"
+        },
+        {
+            title:"Raakshasa",
+            page:"RAAKSHASA.html",
+            poster:"Raakshasa.jpg"
+        }
+    ],
+
+    Mark: [
+        {
+            title:"Dacoit",
+            page:"DACOIT.html",
+            poster:"Dacoit.jpg"
+        },
+        {
+            title:"Kantara",
+            page:"KANTARA.html",
+            poster:"Kantara.jpg"
+        },
+        {
+            title:"Vaazha-II",
+            page:"VAAZHA-2.html",
+            poster:"Vaazha-2.jpg"
+        }
+    ],
+
+    Landlord: [
+        {
+            title:"Dacoit",
+            page:"DACOIT.html",
+            poster:"Dacoit.jpg"
+        },
+        {
+            title:"Mark",
+            page:"MARK.html",
+            poster:"Mark.jpg"
+        },
+        {
+            title:"Kantara",
+            page:"KANTARA.html",
+            poster:"Kantara.jpg"
+        }
+    ]
+
+};
+function loadRecommendations(){
+
+    const lastWatched =
+    localStorage.getItem("last_watched");
+
+    const container =
+    document.getElementById(
+        "recommendedMovies"
+    );
+
+    const title =
+    document.getElementById(
+        "recommendationTitle"
+    );
+
+    if(
+        !lastWatched ||
+        !recommendations[lastWatched]
+    ){
+
+        document.getElementById(
+            "recommendedSection"
+        ).style.display = "none";
+
+        return;
+    }
+
+   title.innerText =
+`Because You Watched ${lastWatched}`;
+
+    container.innerHTML = "";
+
+    recommendations[lastWatched]
+    .forEach(movie => {
+
+        container.innerHTML += `
+
+        <div class="movie">
+
+            <a href="${movie.page}">
+
+                <img src="${movie.poster}"
+                     alt="${movie.title}">
+
+            </a>
+
+            <div class="movie-name">
+
+                ${movie.title}
+
+            </div>
+
+        </div>
+
+        `;
+    });
+}
+function loadMyList(){
+
+    const watchlist =
+    JSON.parse(localStorage.getItem("myList")) || [];
+
+    const container =
+    document.getElementById("myListMovies");
+
+    const section =
+    document.getElementById("myListSection");
+
+    if(watchlist.length === 0){
+
+        section.style.display = "none";
+        return;
+
+    }
+
+    section.style.display = "block";
+
+    container.innerHTML = "";
+
+    watchlist.forEach(movie => {
+
+        container.innerHTML += `
+
+        <div class="movie">
+
+            <a href="${movie.page}">
+
+                <img src="${movie.poster}"
+                     alt="${movie.title}">
+
+            </a>
+
+            <div class="movie-name">
+
+                ${movie.title}
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+loadContinueWatching();
+loadMyList();
+loadRecommendations();
+    </script>
+</body>
+</html>

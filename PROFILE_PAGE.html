@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>STREAM BOX PROFILE</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ==========================
+   GLOBAL STYLES
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:white;
+    overflow-x:hidden;
+    margin-bottom: 100px;
+    background:
+    radial-gradient(circle at top,
+    rgba(229,9,20,0.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,60,0,0.10),
+    transparent 35%),
+
+    linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #101010 50%,
+    #141414 100%
+    );
+
+    position:relative;
+}
+
+/* Animated Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px);
+
+    background-size:30px 30px;
+
+    pointer-events:none;
+
+    opacity:.5;
+
+    z-index:-2;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    45deg,
+    transparent,
+    rgba(229,9,20,0.04),
+    transparent);
+
+    animation:
+    bgMove 15s linear infinite;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+@keyframes bgMove{
+
+    from{
+        transform:translateX(-30%);
+    }
+
+    to{
+        transform:translateX(30%);
+    }
+}
+
+/* ==========================
+   TOP BAR
+========================== */
+
+.top-bar{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:
+    rgba(15,15,15,.65);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.logo{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    user-select:none;
+}
+
+.logo span{
+
+    color:#E50914;
+
+    text-shadow:
+    0 0 15px
+    rgba(229,9,20,.5);
+}
+
+.history-btn{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+}
+
+.history-btn:hover{
+
+    transform:
+    translateY(-2px)
+    scale(1.05);
+
+    border-color:
+    rgba(229,9,20,.45);
+
+    box-shadow:
+    0 0 20px
+    rgba(229,9,20,.20);
+}
+
+.history-btn i{
+
+    font-size:18px;
+}
+
+/* ==========================
+   PROFILE SECTION
+========================== */
+
+.profile-section{
+
+    padding-top:100px;
+
+    padding-bottom:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+/* ==========================
+   PREMIUM GLASS PROFILE CARD
+========================== */
+
+.profile-card{
+
+    width:92%;
+
+    max-width:390px;
+
+    padding:32px 22px;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.45),
+    0 0 40px rgba(229,9,20,.12);
+
+    animation:
+    cardFade .7s ease;
+}
+
+.profile-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    top:-90px;
+    right:-90px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    rgba(229,9,20,.25),
+    transparent);
+
+    pointer-events:none;
+}
+
+.profile-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    bottom:-70px;
+    left:-70px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    rgba(255,255,255,.08),
+    transparent);
+
+    pointer-events:none;
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ==========================
+   PROFILE IMAGE
+========================== */
+
+.profile-pic{
+
+    width:125px;
+    height:125px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    position:relative;
+
+    cursor:pointer;
+
+    background:
+    url('profile1.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+    border:4px solid #E50914;
+
+    box-shadow:
+    0 0 25px
+    rgba(229,9,20,.35);
+
+    transition:.35s;
+}
+
+.profile-pic:hover{
+
+    transform:scale(1.04);
+}
+
+.edit-icon{
+
+    position:absolute;
+
+    bottom:6px;
+    right:6px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    color:black;
+
+    font-size:15px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.25);
+}
+
+input[type=file]{
+
+    display:none;
+}
+
+/* ==========================
+   USER DETAILS
+========================== */
+
+.username{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+    font-weight:700;
+}
+
+.email{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    color:#bdbdbd;
+}
+
+/* ==========================
+   PREMIUM BADGE
+========================== */
+
+.premium-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:18px;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #E50914,
+    #ff9800);
+
+    box-shadow:
+    0 0 20px
+    rgba(229,9,20,.35);
+}
+/* ==========================
+   WATCH STATS SECTION
+========================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:28px;
+}
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:18px 12px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(229,9,20,.10),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.stat-card:hover{
+
+    transform:
+    translateY(-4px);
+
+    border-color:
+    rgba(229,9,20,.30);
+
+    box-shadow:
+    0 12px 30px
+    rgba(229,9,20,.12);
+}
+
+.stat-card:hover::before{
+
+    opacity:1;
+}
+
+.stat-number{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#E50914;
+}
+
+.stat-label{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:5px;
+
+    font-size:12px;
+
+    color:#bfbfbf;
+
+    letter-spacing:.5px;
+}
+
+/* ==========================
+   OPTIONS SECTION
+========================== */
+
+.options{
+
+    margin-top:30px;
+}
+
+.option{
+
+    width:100%;
+
+    margin-top:14px;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.option::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(229,9,20,.10),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.option:hover{
+
+    transform:
+    translateY(-3px);
+
+    border-color:
+    rgba(229,9,20,.30);
+
+    box-shadow:
+    0 10px 25px
+    rgba(229,9,20,.12);
+}
+
+.option:hover::before{
+
+    opacity:1;
+}
+
+.option-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.option-left span{
+
+    font-size:14px;
+
+    font-weight:500;
+}
+
+.option i{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:18px;
+}
+
+.option .fa-angle-right{
+
+    color:#999;
+
+    transition:.3s;
+}
+
+.option:hover .fa-angle-right{
+
+    color:#E50914;
+
+    transform:
+    translateX(3px);
+}
+
+/* ==========================
+   PREMIUM OPTION ICONS
+========================== */
+
+.option-left i{
+
+    width:42px;
+    height:42px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    background:
+    rgba(229,9,20,.12);
+
+    border:
+    1px solid
+    rgba(229,9,20,.18);
+}
+
+/* ==========================
+   THEME TOGGLE ICON
+========================== */
+
+.theme-toggle{
+
+    color:#ffd54f !important;
+
+    font-size:20px;
+}
+
+/* ==========================
+   DOWNLOAD OPTION
+========================== */
+
+.option a{
+
+    color:white;
+
+    text-decoration:none;
+}
+
+.option a:hover{
+
+    color:#fff;
+}
+
+/* ==========================
+   LOGOUT OPTION
+========================== */
+
+.logout-option{
+
+    border:
+    1px solid
+    rgba(255,80,80,.20);
+}
+
+.logout-option:hover{
+
+    border-color:
+    rgba(255,80,80,.45);
+
+    box-shadow:
+    0 10px 25px
+    rgba(255,80,80,.15);
+}
+
+.logout-option
+.option-left i{
+
+    background:
+    rgba(255,80,80,.12);
+
+    border:
+    1px solid
+    rgba(255,80,80,.18);
+
+    color:#ff6b6b;
+}
+
+/* ==========================
+   PREMIUM DIVIDER
+========================== */
+
+.section-divider{
+
+    width:100%;
+
+    height:1px;
+
+    margin:25px 0;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.10),
+    transparent);
+}
+
+/* ==========================
+   OPTION CLICK EFFECT
+========================== */
+
+.option:active{
+
+    transform:
+    scale(.98);
+}
+/* ==========================
+   ❤️ MY LIST SECTION
+========================== */
+
+.section-title{
+
+    margin-top:15px;
+    margin-bottom:10px;
+    margin-left: 10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:18px;
+    font-weight:700;
+
+    color:#ffffff;
+}
+
+.section-title i{
+
+    color:#E50914;
+
+    font-size:18px;
+}
+
+.horizontal-list{
+
+    display:flex;
+    gap:14px;
+    margin-left: 10px;
+    overflow-x:auto;
+
+    padding-bottom:8px;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+}
+
+.horizontal-list::-webkit-scrollbar{
+
+    display:none;
+}
+
+/* ==========================
+   PREMIUM MOVIE CARDS
+========================== */
+
+.movie-card{
+
+    min-width:130px;
+    width:130px;
+
+    flex-shrink:0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    position:relative;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+}
+
+.movie-card:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.03);
+
+    border-color:
+    rgba(229,9,20,.35);
+
+    box-shadow:
+    0 15px 30px
+    rgba(229,9,20,.15);
+}
+
+.movie-card img{
+
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.movie-info{
+
+    padding:12px;
+}
+
+.movie-title{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:white;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+.movie-subtitle{
+
+    margin-top:4px;
+
+    font-size:11px;
+
+    color:#bdbdbd;
+}
+
+/* ==========================
+   CONTINUE WATCHING
+========================== */
+
+.continue-card{
+
+    position:relative;
+}
+
+.progress-container{
+
+    width:100%;
+
+    height:4px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    overflow:hidden;
+}
+
+.progress-fill{
+
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    #E50914,
+    #ff5a5a);
+
+    border-radius:10px;
+}
+
+.resume-badge{
+
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:
+    rgba(229,9,20,.90);
+
+    backdrop-filter:blur(10px);
+}
+
+/* ==========================
+   DOWNLOAD SECTION
+========================== */
+
+.download-card{
+
+    position:relative;
+}
+
+.download-status{
+
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    rgba(0,180,80,.90);
+
+    color:white;
+
+    font-size:14px;
+
+    box-shadow:
+    0 0 15px
+    rgba(0,180,80,.30);
+}
+
+.download-size{
+
+    margin-top:5px;
+
+    font-size:11px;
+
+    color:#9e9e9e;
+}
+
+/* ==========================
+   EMPTY STATE DESIGN
+========================== */
+
+.empty-state{
+
+    width:100%;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px dashed
+    rgba(255,255,255,.10);
+}
+
+.empty-state i{
+
+    font-size:40px;
+
+    color:#E50914;
+
+    margin-bottom:12px;
+}
+
+.empty-state h3{
+
+    font-size:16px;
+
+    margin-bottom:6px;
+}
+
+.empty-state p{
+
+    color:#bdbdbd;
+
+    font-size:13px;
+}
+
+/* ==========================
+   PREMIUM POPUP
+========================== */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+
+    z-index:5000;
+
+    padding:20px;
+}
+
+.popup-box{
+
+    width:100%;
+    max-width:380px;
+
+    padding:24px;
+
+    border-radius:28px;
+
+    background:
+    rgba(20,20,20,.92);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    animation:
+    popupFade .35s ease;
+}
+
+@keyframes popupFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.90);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+    }
+}
+
+.popup-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+    font-weight:700;
+}
+
+.popup-title i{
+
+    color:#E50914;
+}
+
+.popup-close{
+
+    margin-left:auto;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:#bdbdbd;
+
+    transition:.3s;
+}
+
+.popup-close:hover{
+
+    color:#E50914;
+
+    transform:rotate(90deg);
+}
+
+/* ==========================
+   TOAST MESSAGE
+========================== */
+
+.toast{
+
+    position:fixed;
+
+    bottom:100px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    background:
+    rgba(20,20,20,.92);
+
+    color:white;
+
+    font-size:13px;
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.30);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:6000;
+}
+
+.toast.show{
+
+    opacity:1;
+    visibility:visible;
+
+    bottom:115px;
+}
+/* ==========================
+   🌙 LIGHT MODE THEME
+========================== */
+
+.light-mode{
+
+    background:
+    linear-gradient(
+    180deg,
+    #f5f5f5 0%,
+    #ffffff 100%
+    );
+
+    color:#111;
+}
+
+.light-mode .top-bar,
+.light-mode .profile-card,
+.light-mode .stat-card,
+.light-mode .option,
+.light-mode .movie-card,
+.light-mode .popup-box{
+
+    background:
+    rgba(255,255,255,.92);
+
+    color:#111;
+
+    border:
+    1px solid
+    rgba(0,0,0,.08);
+}
+
+.light-mode .email,
+.light-mode .stat-label,
+.light-mode .movie-subtitle{
+
+    color:#666;
+}
+
+.light-mode .movie-title,
+.light-mode .username,
+.light-mode .section-title{
+
+    color:#111;
+}
+
+/* ==========================
+   📱 PREMIUM BOTTOM NAVIGATION
+========================== */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+    max-width:420px;
+
+    padding:14px 10px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    border-radius:28px;
+
+    background:
+    rgba(20,20,20,.85);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    box-shadow:
+    0 10px 35px
+    rgba(0,0,0,.35);
+
+    z-index:9999;
+}
+
+.bottom-nav a{
+
+    text-decoration:none;
+
+    color:#9e9e9e;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:5px;
+
+    font-size:11px;
+
+    transition:.3s;
+}
+
+.bottom-nav a i{
+
+    font-size:20px;
+}
+
+.bottom-nav a:hover{
+
+    color:#ffffff;
+
+    transform:
+    translateY(-3px);
+}
+
+.bottom-nav a.active{
+
+    color:#E50914;
+}
+
+.bottom-nav a.active i{
+
+    text-shadow:
+    0 0 15px
+    rgba(229,9,20,.5);
+}
+
+/* ==========================
+   ✨ FLOATING ANIMATIONS
+========================== */
+
+.floating{
+
+    animation:
+    floating 3s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateY(-6px);
+    }
+
+    100%{
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ==========================
+   ✨ FADE-IN ANIMATION
+========================== */
+
+.fade-in{
+
+    animation:
+    fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ==========================
+   ✨ BUTTON RIPPLE EFFECT
+========================== */
+
+.ripple{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.ripple::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:
+    rgba(255,255,255,.30);
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    opacity:0;
+}
+
+.ripple:active::after{
+
+    animation:
+    rippleEffect .5s ease;
+}
+
+@keyframes rippleEffect{
+
+    from{
+
+        transform:scale(0);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:scale(25);
+
+        opacity:0;
+    }
+}
+
+/* ==========================
+   📱 MOBILE RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+    .profile-card{
+
+        width:94%;
+
+        padding:28px 18px;
+    }
+
+    .profile-pic{
+
+        width:110px;
+        height:110px;
+    }
+
+    .username{
+
+        font-size:24px;
+    }
+
+    .stats-grid{
+
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:8px 10px;
+    }
+
+    .stat-number{
+
+        font-size:22px;
+    }
+
+    .movie-card{
+
+        min-width:120px;
+        width:120px;
+    }
+
+    .movie-card img{
+
+        height:100px;
+    }
+
+    .bottom-nav{
+
+        width:95%;
+    }
+}
+
+/* ==========================
+   📱 SMALL DEVICES
+========================== */
+
+@media (max-width:480px){
+
+    .top-bar{
+
+        padding:15px;
+    }
+
+    .logo{
+
+        font-size:22px;
+    }
+
+    .profile-section{
+
+        padding-top:90px;
+    }
+
+    .profile-card{
+
+        border-radius:26px;
+    }
+
+    .username{
+
+        font-size:22px;
+    }
+
+    .email{
+
+        font-size:13px;
+    }
+
+    .premium-badge{
+
+        font-size:11px;
+
+        padding:9px 15px;
+    }
+
+    .bottom-nav a span{
+
+        font-size:10px;
+    }
+
+    .bottom-nav a i{
+
+        font-size:18px;
+    }
+}
+
+/* ==========================
+   🎬 STREAM BOX VERSION
+========================== */
+
+.version-text{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:12px;
+}
+
+/* ==========================
+   END OF STYLE
+========================== */
+
+</style>
+<body>
+
+<!-- ==========================
+     TOP BAR
+========================== -->
+
+<div class="top-bar">
+
+    <div class="logo">
+        STREAM <span>BOX</span>
+    </div>
+
+    <div class="history-btn ripple"
+         onclick="openHistoryPopup()">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     PROFILE SECTION
+========================== -->
+
+<div class="profile-section">
+
+
+    <!-- ==========================
+         PREMIUM GLASS PROFILE CARD
+    ========================== -->
+
+    <div class="profile-card fade-in">
+
+
+        <!-- Profile Image -->
+
+        <div class="profile-pic floating"
+             id="profileImageContainer">
+
+            <div class="edit-icon">
+
+                <i class="fa-solid fa-camera"></i>
+
+            </div>
+
+        </div>
+
+        <input type="file"
+               id="profileImageInput"
+               accept="image/*">
+
+
+        <!-- User Details -->
+
+        <div class="username"
+             id="userName">
+
+            Sanju
+
+        </div>
+
+
+        <div class="email"
+             id="userEmail">
+
+            sanju@example.com
+
+        </div>
+
+
+        <!-- Premium Badge -->
+
+        <div class="premium-badge">
+
+            <i class="fa-solid fa-crown"></i>
+
+            <span>
+                STREAM BOX PREMIUM
+            </span>
+
+        </div>
+
+
+        <!-- ==========================
+             WATCH STATS
+        ========================== -->
+
+        <div class="stats-grid">
+
+
+            <!-- Watched -->
+
+            <div class="stat-card">
+
+                <div class="stat-number"
+                     id="watchCount">
+
+                    0
+
+                </div>
+
+                <div class="stat-label">
+
+                    Watched
+
+                </div>
+
+            </div>
+
+
+            <!-- My List -->
+
+            <div class="stat-card">
+
+                <div class="stat-number"
+                     id="listCount">
+
+                    0
+
+                </div>
+
+                <div class="stat-label">
+
+                    My List
+
+                </div>
+
+            </div>
+
+
+            <!-- Downloads -->
+
+            <div class="stat-card">
+
+                <div class="stat-number"
+                     id="downloadCount">
+
+                    0
+
+                </div>
+
+                <div class="stat-label">
+
+                    Downloads
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Divider -->
+
+        <div class="section-divider"></div>
+
+
+        <!-- Quick Actions -->
+
+        <div class="options">
+
+
+            <!-- Edit Profile -->
+
+            <div class="option ripple"
+                 onclick="editProfile()">
+
+                <div class="option-left">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                    <span>
+
+                        Edit Profile
+
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </div>
+
+
+            <!-- Premium -->
+
+            <div class="option ripple">
+
+                <div class="option-left">
+
+                    <i class="fa-solid fa-gem"></i>
+
+                    <span>
+
+                        Premium Member
+
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </div>
+
+
+            <!-- Notifications -->
+
+            <div class="option ripple"
+                 onclick="showToast('Notifications Enabled 🔔')">
+
+                <div class="option-left">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>
+
+                        Notifications
+
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<!-- ==========================
+     ❤️ MY LIST SECTION
+========================== -->
+
+<div class="section-title fade-in">
+
+    <i class="fa-solid fa-heart"></i>
+
+    <span>My List</span>
+
+</div>
+
+<div class="horizontal-list"
+     id="myListContainer">
+
+    <!-- Dynamic My List Movies -->
+
+    <div class="empty-state"
+         id="emptyMyList">
+
+        <i class="fa-solid fa-heart-crack"></i>
+
+        <h3>
+
+            Your My List is Empty
+
+        </h3>
+
+        <p>
+
+            Add movies to watch later.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     ▶ CONTINUE WATCHING
+========================== -->
+
+<div class="section-title fade-in">
+
+    <i class="fa-solid fa-play-circle"></i>
+
+    <span>Continue Watching</span>
+
+</div>
+
+<div class="horizontal-list"
+     id="continueContainer">
+
+    <!-- Dynamic Continue Watching -->
+
+    <div class="empty-state"
+         id="emptyContinue">
+
+        <i class="fa-solid fa-film"></i>
+
+        <h3>
+
+            Nothing to Continue
+
+        </h3>
+
+        <p>
+
+            Start watching movies to see them here.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     📥 DOWNLOADS
+========================== -->
+
+<div class="section-title fade-in">
+
+    <i class="fa-solid fa-download"></i>
+
+    <span>Downloads</span>
+
+</div>
+
+<div class="horizontal-list"
+     id="downloadsContainer">
+
+    <!-- Dynamic Downloads -->
+
+    <div class="empty-state"
+         id="emptyDownloads">
+
+        <i class="fa-solid fa-cloud-arrow-down"></i>
+
+        <h3>
+
+            No Downloads Yet
+
+        </h3>
+
+        <p>
+
+            Download movies to watch offline.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     PREMIUM POPUP
+========================== -->
+
+<div class="popup-overlay"
+     id="historyPopup">
+
+    <div class="popup-box">
+
+        <div class="popup-title">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <span>
+
+                Recent Activity
+
+            </span>
+
+            <i class="fa-solid fa-xmark popup-close"
+               onclick="closeHistoryPopup()"></i>
+
+        </div>
+
+        <div id="historyContent">
+
+            <div class="empty-state">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>
+
+                    No Activity Yet
+
+                </h3>
+
+                <p>
+
+                    Your recent activity will appear here.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     TOAST MESSAGE
+========================== -->
+
+<div class="toast"
+     id="toast">
+
+    Welcome to Stream Box 👋
+
+</div>
+<!-- ==========================
+     ⚙ SETTINGS OPTIONS
+========================== -->
+
+<div class="section-divider"></div>
+
+<div class="options">
+
+    <!-- Theme Toggle -->
+
+    <div class="option ripple"
+         onclick="toggleTheme()">
+
+        <div class="option-left">
+
+            <i class="fa-solid fa-moon theme-toggle"
+               id="themeIcon"></i>
+
+            <span>
+
+                Theme
+
+            </span>
+
+        </div>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+    </div>
+
+
+    <!-- App Version -->
+
+    <div class="option ripple">
+
+        <div class="option-left">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+
+                App Version
+
+            </span>
+
+        </div>
+
+        <span
+        style="
+        color:#999;
+        font-size:13px;">
+
+            v1.0
+
+        </span>
+
+    </div>
+
+
+    <!-- Share Stream Box -->
+
+    <div class="option ripple"
+         onclick="shareApp()">
+
+        <div class="option-left">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+            <span>
+
+                Share Stream Box
+
+            </span>
+
+        </div>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+    </div>
+
+
+    <!-- Logout -->
+
+    <div class="option ripple logout-option"
+         onclick="logout()">
+
+        <div class="option-left">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+
+                Logout
+
+            </span>
+
+        </div>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     VERSION TEXT
+========================== -->
+
+<div class="version-text">
+
+    STREAM BOX v1.0 <br>
+
+    Made with ❤️ by AI
+
+</div>
+
+
+<!-- ==========================
+     BOTTOM NAVIGATION
+========================== -->
+
+<div class="bottom-nav">
+
+    <a href="index(1).html">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>
+
+            Home
+
+        </span>
+
+    </a>
+
+
+    <a href="SEARCH_PAGE.html">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <span>
+
+            Search
+
+        </span>
+
+    </a>
+
+
+    <a href="DOWNLOAD_PAGE.html">
+
+        <i class="fa-solid fa-download"></i>
+
+        <span>
+
+            Downloads
+
+        </span>
+
+    </a>
+
+
+    <a href="PROFILE_PAGE.html"
+       class="active">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>
+
+            Profile
+
+        </span>
+
+    </a>
+
+</div>
+
+
+<!-- ==========================
+     BODY END
+========================== -->
+
+</body>
+
+
+<!-- ==========================
+     JAVASCRIPT START
+========================== -->
+
+<script>
+/* ==========================
+   PROFILE INITIALIZATION
+========================== */
+
+// Profile Elements
+
+const userName =
+document.getElementById("userName");
+
+const userEmail =
+document.getElementById("userEmail");
+
+const profileImageContainer =
+document.getElementById("profileImageContainer");
+
+const profileImageInput =
+document.getElementById("profileImageInput");
+
+const toast =
+document.getElementById("toast");
+
+
+/* ==========================
+   LOAD PROFILE DATA
+========================== */
+
+function loadProfile(){
+
+    const savedName =
+    localStorage.getItem("profileName");
+
+    const savedEmail =
+    localStorage.getItem("profileEmail");
+
+    const savedImage =
+    localStorage.getItem("profileImage");
+
+
+    if(savedName){
+
+        userName.innerText =
+        savedName;
+
+    }
+
+
+    if(savedEmail){
+
+        userEmail.innerText =
+        savedEmail;
+
+    }
+
+
+    if(savedImage){
+
+        profileImageContainer.style.backgroundImage =
+        `url(${savedImage})`;
+
+    }
+
+}
+
+
+/* ==========================
+   PROFILE IMAGE CHANGE
+========================== */
+
+profileImageContainer.addEventListener(
+"click",
+() => {
+
+    profileImageInput.click();
+
+});
+
+
+
+profileImageInput.addEventListener(
+"change",
+
+function(){
+
+    const file =
+    this.files[0];
+
+    if(!file) return;
+
+
+    const reader =
+    new FileReader();
+
+
+    reader.onload =
+    function(e){
+
+        const imageData =
+        e.target.result;
+
+
+        profileImageContainer.style.backgroundImage =
+        `url(${imageData})`;
+
+
+        localStorage.setItem(
+        "profileImage",
+        imageData
+        );
+
+
+        showToast(
+        "Profile Photo Updated 📸"
+        );
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+});
+
+
+/* ==========================
+   EDIT PROFILE
+========================== */
+
+function editProfile(){
+
+    let newName =
+    prompt(
+    "Enter Your Name",
+    userName.innerText
+    );
+
+
+    if(newName){
+
+        newName =
+        newName.trim();
+
+
+        if(newName !== ""){
+
+            userName.innerText =
+            newName;
+
+
+            localStorage.setItem(
+            "profileName",
+            newName
+            );
+
+        }
+
+    }
+
+
+
+    let newEmail =
+    prompt(
+    "Enter Your Email",
+    userEmail.innerText
+    );
+
+
+    if(newEmail){
+
+        newEmail =
+        newEmail.trim();
+
+
+        if(newEmail !== ""){
+
+            userEmail.innerText =
+            newEmail;
+
+
+            localStorage.setItem(
+            "profileEmail",
+            newEmail
+            );
+
+        }
+
+    }
+
+
+    showToast(
+    "Profile Updated ✅"
+    );
+
+}
+
+
+/* ==========================
+   THEME TOGGLE
+========================== */
+
+function toggleTheme(){
+
+    document.body.classList.toggle(
+    "light-mode"
+    );
+
+
+    const isLightMode =
+    document.body.classList.contains(
+    "light-mode"
+    );
+
+
+    localStorage.setItem(
+    "theme",
+    isLightMode
+    );
+
+
+    const themeIcon =
+    document.getElementById(
+    "themeIcon"
+    );
+
+
+    if(themeIcon){
+
+        themeIcon.className =
+        isLightMode
+        ?
+        "fa-solid fa-sun theme-toggle"
+        :
+        "fa-solid fa-moon theme-toggle";
+
+    }
+
+
+    showToast(
+
+        isLightMode
+        ?
+        "Light Mode Enabled ☀️"
+        :
+        "Dark Mode Enabled 🌙"
+
+    );
+
+}
+
+
+/* ==========================
+   LOAD SAVED THEME
+========================== */
+
+function loadTheme(){
+
+    const savedTheme =
+    localStorage.getItem(
+    "theme"
+    );
+
+
+    const themeIcon =
+    document.getElementById(
+    "themeIcon"
+    );
+
+
+    if(savedTheme === "true"){
+
+        document.body.classList.add(
+        "light-mode"
+        );
+
+
+        if(themeIcon){
+
+            themeIcon.className =
+            "fa-solid fa-sun theme-toggle";
+
+        }
+
+    }
+
+}
+
+
+/* ==========================
+   PREMIUM TOAST SYSTEM
+========================== */
+
+function showToast(message){
+
+    toast.innerText =
+    message;
+
+
+    toast.classList.add(
+    "show"
+    );
+
+
+    clearTimeout(
+    window.toastTimer
+    );
+
+
+    window.toastTimer =
+    setTimeout(() => {
+
+        toast.classList.remove(
+        "show"
+        );
+
+    },2500);
+
+}
+
+
+/* ==========================
+   INITIALIZE PROFILE
+========================== */
+
+loadProfile();
+
+loadTheme();
+/* ==========================
+   WATCH STATS SYSTEM
+========================== */
+
+function loadWatchStats(){
+
+    /* Watched Movies */
+
+    const watchedMovies =
+    Object.keys(localStorage)
+    .filter(key =>
+        key.startsWith("continue_")
+    );
+
+    document.getElementById(
+    "watchCount"
+    ).innerText =
+    watchedMovies.length;
+
+
+    /* My List Count */
+
+    const myList =
+    JSON.parse(
+    localStorage.getItem("myList")
+    ) || [];
+
+
+    document.getElementById(
+    "listCount"
+    ).innerText =
+    myList.length;
+
+
+    /* Downloads Count */
+
+    const downloads =
+    JSON.parse(
+    localStorage.getItem("downloads")
+    ) || [];
+
+
+    document.getElementById(
+    "downloadCount"
+    ).innerText =
+    downloads.length;
+
+}
+
+
+/* ==========================
+   ❤️ LOAD MY LIST
+========================== */
+
+function loadMyList(){
+
+    const container =
+    document.getElementById(
+    "myListContainer"
+    );
+
+    const emptyState =
+    document.getElementById(
+    "emptyMyList"
+    );
+
+
+    const myList =
+    JSON.parse(
+    localStorage.getItem("myList")
+    ) || [];
+
+
+    if(myList.length === 0){
+
+        emptyState.style.display =
+        "block";
+
+        return;
+    }
+
+
+    emptyState.style.display =
+    "none";
+
+
+    myList.forEach(movie => {
+
+        container.innerHTML += `
+
+        <div class="movie-card fade-in"
+             onclick="location.href='${movie.page}'">
+
+            <img src="${movie.poster}"
+                 alt="${movie.title}">
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+
+                    ${movie.title}
+
+                </div>
+
+                <div class="movie-subtitle">
+
+                    Saved in My List ❤️
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ==========================
+   ▶ LOAD CONTINUE WATCHING
+========================== */
+
+function loadContinueWatching(){
+
+    const container =
+    document.getElementById(
+    "continueContainer"
+    );
+
+    const emptyState =
+    document.getElementById(
+    "emptyContinue"
+    );
+
+
+    const continueKeys =
+    Object.keys(localStorage)
+    .filter(key =>
+        key.startsWith("continue_")
+    );
+
+
+    if(continueKeys.length === 0){
+
+        emptyState.style.display =
+        "block";
+
+        return;
+    }
+
+
+    emptyState.style.display =
+    "none";
+
+
+    continueKeys.forEach(key => {
+
+        const movie =
+        JSON.parse(
+        localStorage.getItem(key)
+        );
+
+
+        if(!movie) return;
+
+
+        const progress =
+        Math.floor(
+            (movie.currentTime /
+            movie.duration) * 100
+        );
+
+
+        container.innerHTML += `
+
+        <div class="movie-card continue-card fade-in"
+             onclick="location.href='${movie.page}'">
+
+            <img src="${movie.poster}"
+                 alt="${movie.title}">
+
+            <div class="resume-badge">
+
+                Resume
+
+            </div>
+
+            <div class="progress-container">
+
+                <div class="progress-fill"
+                     style="width:${progress}%">
+
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+
+                    ${movie.title}
+
+                </div>
+
+                <div class="movie-subtitle">
+
+                    ${progress}% Watched
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ==========================
+   📥 LOAD DOWNLOADS
+========================== */
+
+function loadDownloads(){
+
+    const container =
+    document.getElementById(
+    "downloadsContainer"
+    );
+
+    const emptyState =
+    document.getElementById(
+    "emptyDownloads"
+    );
+
+
+    const downloads =
+    JSON.parse(
+    localStorage.getItem("downloads")
+    ) || [];
+
+
+    if(downloads.length === 0){
+
+        emptyState.style.display =
+        "block";
+
+        return;
+    }
+
+
+    emptyState.style.display =
+    "none";
+
+
+    downloads.forEach(movie => {
+
+        container.innerHTML += `
+
+        <div class="movie-card download-card fade-in"
+             onclick="location.href='DOWNLOAD_PAGE.html'">
+
+            <img src="${movie.poster}"
+                 alt="${movie.title}">
+
+            <div class="download-status">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+
+                    ${movie.title}
+
+                </div>
+
+                <div class="download-size">
+
+                    ${movie.quality || "HD"}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ==========================
+   LOAD ALL DYNAMIC DATA
+========================== */
+
+loadWatchStats();
+
+loadMyList();
+
+loadContinueWatching();
+
+loadDownloads();
+/* ==========================
+   🕒 HISTORY POPUP SYSTEM
+========================== */
+
+function openHistoryPopup(){
+
+    const popup =
+    document.getElementById(
+    "historyPopup"
+    );
+
+    const content =
+    document.getElementById(
+    "historyContent"
+    );
+
+    popup.style.display =
+    "flex";
+
+
+    let historyHTML = "";
+
+
+    /* Continue Watching History */
+
+    const continueKeys =
+    Object.keys(localStorage)
+    .filter(key =>
+        key.startsWith("continue_")
+    );
+
+
+    if(continueKeys.length > 0){
+
+        continueKeys.forEach(key => {
+
+            const movie =
+            JSON.parse(
+            localStorage.getItem(key)
+            );
+
+            if(!movie) return;
+
+            historyHTML += `
+
+            <div class="option ripple"
+                 onclick="location.href='${movie.page}'">
+
+                <div class="option-left">
+
+                    <i class="fa-solid fa-film"></i>
+
+                    <span>
+
+                        Continued :
+                        ${movie.title}
+
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+
+    /* Downloads History */
+
+    const downloads =
+    JSON.parse(
+    localStorage.getItem("downloads")
+    ) || [];
+
+
+    downloads.forEach(movie => {
+
+        historyHTML += `
+
+        <div class="option ripple"
+             onclick="location.href='DOWNLOAD_PAGE.html'">
+
+            <div class="option-left">
+
+                <i class="fa-solid fa-download"></i>
+
+                <span>
+
+                    Downloaded :
+                    ${movie.title}
+
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-angle-right"></i>
+
+        </div>
+
+        `;
+
+    });
+
+
+    if(historyHTML === ""){
+
+        historyHTML = `
+
+        <div class="empty-state">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>
+
+                No Activity Yet
+
+            </h3>
+
+            <p>
+
+                Your recent activity will appear here.
+
+            </p>
+
+        </div>
+
+        `;
+
+    }
+
+
+    content.innerHTML =
+    historyHTML;
+
+}
+
+
+function closeHistoryPopup(){
+
+    document.getElementById(
+    "historyPopup"
+    ).style.display =
+    "none";
+
+}
+
+
+/* ==========================
+   📤 SHARE STREAM BOX
+========================== */
+
+function shareApp(){
+
+    if(navigator.share){
+
+        navigator.share({
+
+            title:
+            "STREAM BOX",
+
+            text:
+            "Watch Movies on STREAM BOX 🎬",
+
+            url:
+            window.location.origin
+
+        });
+
+    }else{
+
+        navigator.clipboard.writeText(
+        window.location.origin
+        );
+
+        showToast(
+        "Link Copied 📋"
+        );
+
+    }
+
+}
+
+
+/* ==========================
+   🚪 SAFE LOGOUT
+========================== */
+
+function logout(){
+
+    const confirmLogout =
+    confirm(
+    "Are you sure you want to logout?"
+    );
+
+    if(!confirmLogout)
+    return;
+
+
+    showToast(
+    "Logged Out 👋"
+    );
+
+
+    setTimeout(() => {
+
+        window.location.href =
+        "HOME_PAGE.html";
+
+    },1000);
+
+}
+
+
+/* ==========================
+   CLOSE POPUP ON OUTSIDE CLICK
+========================== */
+
+window.addEventListener(
+"click",
+
+function(e){
+
+    const popup =
+    document.getElementById(
+    "historyPopup"
+    );
+
+    if(e.target === popup){
+
+        closeHistoryPopup();
+
+    }
+
+});
+
+
+/* ==========================
+   FINAL INITIALIZATION
+========================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+
+function(){
+
+    loadProfile();
+
+    loadTheme();
+
+    loadWatchStats();
+
+    loadMyList();
+
+    loadContinueWatching();
+
+    loadDownloads();
+
+});
+
+
+/* ==========================
+   END OF SCRIPT
+========================== */
+
+</script>
+
+</html>
